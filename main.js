@@ -58,4 +58,5 @@ function init() {
         cube.rotation.x -= 0.001;
         renderer.render(scene, camera);
     }
+    
 }
