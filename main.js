@@ -19,11 +19,11 @@ function init() {
     camera.position.set(5, 0, 15);
     
     const mtlloader = new THREE.MTLLoader();
-    mtlloader.setPath("model/E-45-Aircraft/");
+    mtlloader.setPath("./model/E-45-Aircraft/");
     mtlloader.load("E 45 Aircraft_obj.mtl",function(materials){
         materials.preload();
         const objloader = new THREE.OBJLoader();
-        objloader.setPath("model/E-45-Aircraft/");
+        objloader.setPath("./model/E-45-Aircraft/");
         objloader.setMaterials(materials);
         objloader.load("E 45 Aircraft_obj.obj",function (object){
             object.rotation.x = Math.PI / 6;
