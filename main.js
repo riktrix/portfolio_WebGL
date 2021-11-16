@@ -5,7 +5,6 @@ function init() {
     const width = 960;
     const height = 540;
 
-    const canvasElement = document.querySelector("#canvas");
     const renderer = new THREE.WebGLRenderer({
         canvas: document.querySelector("#canvas"),
         antialias: true,
@@ -36,12 +35,12 @@ function init() {
     const geometry = new THREE.CubeGeometry(3000, 3000, 3000);
     const cubeMaterials = 
     [
-        new THREE.MeshBasicMaterial({ map: textureLoader.load("model/space.png"), side: THREE.DoubleSide }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load("model/space.png"), side: THREE.DoubleSide }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load("model/space.png"), side: THREE.DoubleSide }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load("model/space.png"), side: THREE.DoubleSide }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load("model/space.png"), side: THREE.DoubleSide }),
-        new THREE.MeshBasicMaterial({ map: textureLoader.load("model/space.png"), side: THREE.DoubleSide })
+        new THREE.MeshBasicMaterial({ map: textureLoader.load("./model/space.png"), side: THREE.DoubleSide }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load("./model/space.png"), side: THREE.DoubleSide }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load("./model/space.png"), side: THREE.DoubleSide }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load("./model/space.png"), side: THREE.DoubleSide }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load("./model/space.png"), side: THREE.DoubleSide }),
+        new THREE.MeshBasicMaterial({ map: textureLoader.load("./model/space.png"), side: THREE.DoubleSide })
     ];
     const material = new THREE.MeshFaceMaterial(cubeMaterials);
     const cube = new THREE.Mesh(geometry, material);
