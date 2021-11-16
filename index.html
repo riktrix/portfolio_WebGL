@@ -31,16 +31,16 @@
 //       const box = new THREE.Mesh(geometry, material);
 //       scene.add(box);
       
-      new THREE.MTLLoader().setPath('model/E-45-Aircraft/textures')
-                           .load('male02.mtl',function(materials){
+      new THREE.MTLLoader().setPath('model/E-45-Aircraft/')
+                           .load('E 45 Aircraft_obj.mtl',function(materials){
 
           materials.preload();
 
-          new THREE.OBJLoader().setPath('models/male02/')
+          new THREE.OBJLoader().setPath('model/E-45-Aircraft/')
                                .setMaterials(materials)
-                               .load('male02.obj',function (object){
+                               .load('E 45 Aircraft_obj.obj',function (object){
 
-              object.position.y = - 95;
+              object.position.y = -100;
               scene.add(object);
 
           }); 
