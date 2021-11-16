@@ -37,7 +37,8 @@
 
           materials.preload();
 
-          const objloader = new THREE.OBJLoader().setPath('model/E-45-Aircraft/');
+          const objloader = new THREE.OBJLoader();
+          objloader.setPath('model/E-45-Aircraft/');
           objloader.setMaterials(materials);
           objloader.load('E 45 Aircraft_obj.obj',function (object){
 
