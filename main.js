@@ -18,18 +18,14 @@ function init() {
     const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
     camera.position.set(5, 0, 15);
     
-    const mtlloader = new THREE.MTLLoader();
-    mtlloader.setPath("./model/E-45-Aircraft/");
-    mtlloader.load("E 45 Aircraft_obj.mtl",function(materials){
-        materials.preload();
-        const objloader = new THREE.OBJLoader();
-        objloader.setPath("./model/E-45-Aircraft/");
-        objloader.setMaterials(materials);
-        objloader.load("E 45 Aircraft_obj.obj",function (object){
-            object.rotation.x = Math.PI / 6;
-            scene.add(object); 
-        }); 
-    });    
+    // 3DS形式のモデルデータを読み込む
+    const loader = new THREE.ColladaLoader();
+    // 3dsファイルのパスを指定
+    loader.load('./model/fish-3d.dae', (collada) => {
+    // 読み込み後に3D空間に追加
+     const model = collada.scene;
+     scene.add(model);
+    });
 
     const textureLoader = new THREE.TextureLoader();
     const geometry = new THREE.CubeGeometry(3000, 3000, 3000);
